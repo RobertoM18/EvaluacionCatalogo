@@ -3,78 +3,43 @@ package com.example.catalogoevaluacion.screens
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.material3.Button
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Card
-import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.catalogoevaluacion.ItemData
-import com.example.catalogoevaluacion.R
-
+import com.example.catalogoevaluacion.catalogoItems
 
 @Composable
-fun PantallaDetalle(
-    item: ItemData?,
-    onVolver: () -> Unit
-) {
-
+fun PantallaDetalle(item: ItemData) {
     Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .padding(16.dp),
-
-        horizontalAlignment =
-            Alignment.CenterHorizontally
+        modifier = Modifier.fillMaxSize()
+            .verticalScroll(rememberScrollState()).padding(16.dp),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
-
         Image(
-            painter = painterResource(
-                id = R.drawable.libroicono
-            ),
-
-            contentDescription = "Logo",
-
-            modifier = Modifier
-                .size(80.dp)
-                .padding(bottom = 16.dp)
+            painter = painterResource(item.imagenRes),
+            contentDescription = item.nombre,
+            modifier = Modifier.size(140.dp)
         )
-
-        Card(
-            modifier = Modifier
-                .fillMaxWidth()
-                .weight(1f)
-                .padding(vertical = 16.dp),
-
-            elevation =
-                CardDefaults.cardElevation(
-                    defaultElevation = 6.dp
-                )
-        ) {
-
+        Card(modifier = Modifier.fillMaxWidth()) {
             Column(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .padding(24.dp),
-
-                horizontalAlignment =
-                    Alignment.CenterHorizontally,
-
-                verticalArrangement =
-                    Arrangement.Center
+                modifier = Modifier.padding(24.dp),
+                verticalArrangement = Arrangement.spacedBy(16.dp)
             ) {
+<<<<<<< HEAD
 
                 Spacer(
                     modifier = Modifier.height(8.dp)
@@ -115,18 +80,15 @@ fun PantallaDetalle(
                     style =
                         MaterialTheme.typography.bodyMedium
                 )
+=======
+                Text(item.titulo, style = MaterialTheme.typography.titleMedium)
+                Text(item.nombre, style = MaterialTheme.typography.headlineMedium)
+                Text("Autor: ${item.autor}")
+                Text("Publicado: ${item.publicado}")
+                Text("Género: ${item.genero}")
+                Text(item.description, style = MaterialTheme.typography.bodyMedium)
+>>>>>>> 38cdab7 (Segunda Version)
             }
-        }
-
-        Button(
-            onClick = onVolver,
-
-            modifier = Modifier.align(
-                Alignment.Start
-            )
-        ) {
-
-            Text("Atrás")
         }
     }
 }
@@ -134,17 +96,5 @@ fun PantallaDetalle(
 @Preview(showBackground = true)
 @Composable
 fun PantallaDetallePreview() {
-    PantallaDetalle(
-        item = ItemData(
-            id = 2,
-            titulo = "Libros",
-            nombre = "Sapiens: De Animales a Dioses",
-            autor = "Yuval Noah Harari",
-            publicado = 2011,
-            genero = "Historia",
-            description = "Una frase realista describe su discplina controvercial",
-            imagenRes = R.drawable.libroicono
-        ),
-        onVolver = {}
-    )
+    PantallaDetalle(item = catalogoItems[0])
 }
