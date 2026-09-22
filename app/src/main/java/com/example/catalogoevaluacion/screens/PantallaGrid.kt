@@ -43,7 +43,7 @@ fun PantallaGrid(
                     publicado = 2011,
                     genero = "Historia",
                     description = "Una frase realista describe su discplina controvercial",
-                    imagenRes = R.drawable.libroicono
+                    imagenRes = R.drawable.images
                 ),
                 ItemData(
                     id = 3,
@@ -53,7 +53,7 @@ fun PantallaGrid(
                     publicado = 2011,
                     genero = "Historia",
                     description = "Una frase realista describe su discplina controvercial",
-                    imagenRes = R.drawable.libroicono
+                    imagenRes = R.drawable.pngtree_vector_car_icon_png_image_4277458
                 ),
                 ItemData(
                     id = 4,
@@ -73,7 +73,7 @@ fun PantallaGrid(
                     publicado = 2011,
                     genero = "Historia",
                     description = "Una frase realista describe su discplina controvercial",
-                    imagenRes = R.drawable.libroicono
+                    imagenRes = R.drawable._80942
                 ),
                 ItemData(
                     id = 6,
@@ -83,7 +83,7 @@ fun PantallaGrid(
                     publicado = 2011,
                     genero = "Historia",
                     description = "Una frase realista describe su discplina controvercial",
-                    imagenRes = R.drawable.libroicono
+                    imagenRes = R.drawable.pngtree_vector_car_icon_png_image_4277458
                 ),
             )
         }

@@ -70,12 +70,18 @@ fun CardItemGrid(
             )
 
             Text(
-                text = item.genero,
+                text = item.nombre,
                 style = MaterialTheme.typography.bodySmall
             )
 
+            Spacer(
+                modifier = Modifier.height(8.dp)
+            )
 
-
+            Text(
+                text = item.autor,
+                style = MaterialTheme.typography.bodySmall
+            )
         }
     }
 }

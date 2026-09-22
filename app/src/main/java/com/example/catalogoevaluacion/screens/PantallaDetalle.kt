@@ -100,7 +100,7 @@ fun PantallaDetalle(
                             ?: "Detalles del elemento seleccionado...",
 
                     style =
-                        MaterialTheme.typography.bodyMedium
+                        MaterialTheme.typography.bodySmall
                 )
 
                 Spacer(
